@@ -1,34 +1,291 @@
 /** Add css rules here for your application. */
-
-
 /** Example rules used by the template application (remove for your app) */
+body {
+	height: 100%;
+}
+
 h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: #777777;
-  margin: 40px 0px 70px;
-  text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	color: #777777;
+	margin: 40px 0px 70px;
+	text-align: center;
 }
 
 .sendButton {
-  display: block;
-  font-size: 16pt;
+	display: block;
+	font-size: 16pt;
 }
 
 /** Most GWT widgets already have a style name defined */
 .gwt-DialogBox {
-  width: 400px;
+	width: 400px;
 }
 
 .dialogVPanel {
-  margin: 5px;
+	margin: 5px;
 }
 
 .serverResponseLabelError {
-  color: red;
+	color: red;
 }
 
 /** Set ids using widget.getElement().setId("idOfElement") */
 #closeButton {
-  margin: 15px 6px 6px;
+	margin: 15px 6px 6px;
 }
+
+
+
+.mainContainer {
+	position:relative;
+	padding:49px 0px 0px 187px;
+}
+
+.ClearFloat {
+	clear: both;
+}
+
+.ButtonText {
+	float: left;
+}
+
+.ButtonIcon {
+	float: left;
+}
+
+.ButtonContent {
+	height: auto;
+	position:relative;
+}
+
+.ButtonPanel {
+	height: auto;
+	cursor: pointer;
+	float: left;
+	overflow: hidden;
+}
+
+.ButtonPanel:hover {
+
+}
+
+
+.topMenu {
+	width:100%;
+	position:fixed;
+	left:0px;
+	top:0px;
+	height:40px;
+}
+
+.topMenuBack {
+	background:	url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAoCAIAAACw1AcgAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjBDQ0VFNTJCNjhBNzExRTJCMkMzRjFDRkI2OURFQkUxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjBDQ0VFNTJDNjhBNzExRTJCMkMzRjFDRkI2OURFQkUxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MENDRUU1Mjk2OEE3MTFFMkIyQzNGMUNGQjY5REVCRTEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MENDRUU1MkE2OEE3MTFFMkIyQzNGMUNGQjY5REVCRTEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5zBfFeAAAATklEQVR42kxO2w3AQAiiTHTdfzahaGzaD4M8QuA5N4GiBBomHLR55RTev0fD8NZdyUHjFeKp+ZvtjtZFbKcbHQ58mf2lnx6Ed8Ns8SPAAEanTYJN54tzAAAAAElFTkSuQmCC);
+	
+}
+
+
+.leftMenu {
+	width:170px;
+	position:absolute;
+	left:0px;
+	top:40px;
+	height:100%;
+}
+
+
+.leftMenuContainer {
+
+	position:relative;
+
+}
+
+
+.leftMenuBack {
+	background:	url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAC4CAIAAACtshFjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjM0RTIzQzNCNjhBQTExRTJCQUI3QkUxODQyNjdGN0IwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjM0RTIzQzNDNjhBQTExRTJCQUI3QkUxODQyNjdGN0IwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MzRFMjNDMzk2OEFBMTFFMkJBQjdCRTE4NDI2N0Y3QjAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzRFMjNDM0E2OEFBMTFFMkJBQjdCRTE4NDI2N0Y3QjAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6mORVaAAAAz0lEQVR42mxSXRrDMAgCd/9zbacqM/7EptuDX9KICNrX+/0xEGaSXX5CNPpJwbS+IQ96OAaIc4VIk+eIhfU7VTlujCE55FwIbjy4B9v5qW3O1QfRpzkvJE/WJyY59dP/OrQrdO/+uycTy+WHh+fxruTiaBnthfUZkqeW1jv+Tz93/14UGnoH20N5tT23f1Eaqh41o9azPF18cjB0qLXd7wdG8R6a1X5r7r1fjObEeE3xo/1WXmhN87Yxte+Ys88Tz3nVP7p3d+wM596IrwADAPlIWAWtKp8nAAAAAElFTkSuQmCC) 
+	repeat-x
+	#ddd;
+	
+}
+
+
+
+.logoButt{
+	width: 170px;
+	height: 40px;
+}
+
+
+.logoButtIcon {
+width: 116px;
+height: 29px;
+background-image: url('misc/indxesisto_map.png');
+background-position: 0px 0px;
+position: absolute;
+left: 21px;
+top: 7px;
+}
+
+
+.homeIcon {
+width: 22px;
+height: 22px;
+background-image: url('misc/indxesisto_map.png');
+background-position: -2px -31px;
+position: absolute;
+top: 10px;
+left: 138px;
+display:none;
+}
+
+
+.menuButt {
+	width: 170px;
+height: 30px;
+border-top: 1px solid #DEDFDE;
+border-bottom: 1px solid #8C8C8C;
+}
+
+
+.menuButt:hover {
+	background:#c0c0c0;
+	border-top: 1px solid #cbcccb;
+	border-bottom: 1px solid #808180;
+}
+
+.menuButtIcon {
+	width: 23px;
+height: 25px;
+background-image: url('misc/indxesisto_map.png');
+position: absolute;
+top: 4px;
+left: 6px;
+}
+
+
+.menuButtReg .menuButtIcon {
+	background-position: -74px -32px;
+}
+
+.menuButtLog .menuButtIcon {
+	background-position: -25px -32px;
+}
+
+.menuButtDemo .menuButtIcon {
+	background-position: -49px -32px;
+}
+
+	
+
+.menuButtText {
+	position: absolute;
+top: 9px;
+left: 36px;
+font-size: 14px;
+}
+
+
+
+
+
+.menuSubButt {
+	width: 170px;
+border-bottom: 1px dotted #CACACA;
+}
+
+.menuSubButt:hover {
+	filter: brightness(0.03);
+-webkit-filter: brightness(0.03);
+-moz-filter: brightness(0.03);
+-o-filter: brightness(0.03);
+-ms-filter: brightness(0.03);
+}
+
+
+.menuSubButtIcon {
+	width: 0px;
+	height: 0px;
+}
+
+.menuSubButtText {
+font-size: 12px;
+padding: 3px 3px 3px 11px;
+}
+
+
+.greyColor {
+	color: #3d3d3d;
+}
+
+
+.greyColorLigter {
+	color:#575757;
+}
+
+.greyColorLightest {
+	color:#e2e2e2;
+}
+
+
+.greyColorLightestBack {
+	background:#E7E7E7;
+}
+
+
+.greyColorSelectedBackground {
+	background:#c0c0c0;
+}
+
+.pageTitle {
+	font-size: 21px;
+	
+}
+
+
+.pageTitleContainer {
+	padding:7px 0px 15px 0px;
+}
+
+.pageContetntContainer {
+	
+}
+
+
+.label_common {
+	font-size:12px;
+	color:#4c4c4c;
+}
+
+.label_invalid {
+	font-size:12px;
+	color:#ff4242;
+}
+
+.label_valid {
+	font-size:12px;
+	color:#7ed648;
+}
+
+.regFormLabel {
+	/*margin:0px 0px 20px 0px;*/
+margin: 0px 0px 4px 0px;
+}
+
+
+.input_common {
+	font-size:20px;
+	border: 1px solid #3e3e3e;
+	height:22px;
+	width:220px;
+}
+
+
+.regFormInput {
+	margin:0px 0px 18px 0px;
+}
+
+.regFormButt {
+	clear:both;
+	display:block;
+}
+
