@@ -15,6 +15,25 @@
     <servlet-name>greetServlet</servlet-name>
     <url-pattern>/adminpanel/greet</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>UserRPCService</servlet-name>
+    <servlet-class>com.indexisto.front.adminpanel.server.UserRPCServiceImpl</servlet-class>
+    <!--  
+    <init-param>
+    		
+			<param-name>log4j-properties-location</param-name>
+			<param-value>WEB-INF/log4j.xml</param-value>
+	</init-param>
+	-->
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserRPCService</servlet-name>
+    <url-pattern>/adminpanel/UserRPCService</url-pattern>
+  </servlet-mapping>
+  
 
   <!-- Default page to serve -->
   <welcome-file-list>

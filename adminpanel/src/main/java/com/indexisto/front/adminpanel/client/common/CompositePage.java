@@ -3,6 +3,7 @@ package com.indexisto.front.adminpanel.client.common;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.indexisto.front.adminpanel.client.common.helpers.HavePresenter;
 import com.indexisto.front.adminpanel.client.pages.register.RegisterView.Presenter;
 
 public abstract class CompositePage extends Composite {
@@ -12,7 +13,6 @@ public abstract class CompositePage extends Composite {
 	public FlowPanel pageTitleContainer = new FlowPanel();
 	public FlowPanel pageContetntContainer = new FlowPanel();
 	public Label pageTitle = new Label("Page name");
-	public Presenter presenter;
 	
 	public CompositePage() {
 		pageTitle.addStyleName("pageTitle");
@@ -33,8 +33,5 @@ public abstract class CompositePage extends Composite {
 		
 	}
 	
-	public void setPresenter(Presenter presenter) {
-		// TODO Auto-generated method stub
-		this.presenter = presenter;
-	}
+
 }

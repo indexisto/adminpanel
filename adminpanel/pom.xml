@@ -58,7 +58,11 @@
             <version>2.0.0</version>
             <classifier/>
 	</dependency>
-    
+    <dependency>
+		<groupId>com.allen-sauer.gwt.log</groupId>
+		<artifactId>gwt-log</artifactId>
+		<version>3.2.0</version>
+	</dependency>
     
   </dependencies>
 

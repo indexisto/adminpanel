@@ -1,5 +1,6 @@
 package com.indexisto.front.adminpanel.client;
 
+import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.EntryPoint;
@@ -20,6 +21,7 @@ import com.indexisto.front.adminpanel.client.common.InstrumentsFactoryImpl;
 import com.indexisto.front.adminpanel.client.pages.register.RegisterPlace;
 import com.indexisto.front.adminpanel.client.wigets.LeftMenuHolder;
 import com.indexisto.front.adminpanel.client.wigets.TopMenu;
+import com.indexisto.front.adminpanel.client.windows.NotificationContainer;
 
 
 public class adminpanel implements EntryPoint {
@@ -27,13 +29,16 @@ public class adminpanel implements EntryPoint {
 	private Place defaultPlace = new RegisterPlace("World!");
 	private final FlowPanel mainContainer = new FlowPanel();
 	private final SimplePanel MVPPanel = new SimplePanel();
+	private final NotificationContainer notificationContainer = new NotificationContainer();
+	
 	//private final Button sendButton = new Button("Olona");
 	private final TopMenu topMenu = new TopMenu();
 	private final LeftMenuHolder leftMenuHolder = new LeftMenuHolder();
 	
 
 	public void onModuleLoad() {
-	  
+		Log.debug("This is a 'DEBUG' test message");
+ 
 		/*
 	sendButton.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent event) {
@@ -58,13 +63,14 @@ public class adminpanel implements EntryPoint {
 
 	
     mainContainer.addStyleName("mainContainer");
-    
+   
    // mainContainer.add(sendButton);
     mainContainer.add(leftMenuHolder);
     mainContainer.add(topMenu);
    
     
     mainContainer.add(MVPPanel);
+    mainContainer.add(notificationContainer);
     
 	RootPanel.get().add(mainContainer);
 

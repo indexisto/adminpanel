@@ -1,0 +1,2 @@
+# Module com.indexisto.front.adminpanel.adminpanelJUnit
+# RPC service class, partial path of RPC policy file
