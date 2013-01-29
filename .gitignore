@@ -1,0 +1,5 @@
+target/
+src/main/gwt-unitCache/
+src/main/webapp/adminpanel
+src/main/webapp/com.indexisto.front.adminpanel.adminpanelJUnit
+
