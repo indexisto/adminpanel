@@ -12,7 +12,6 @@ import com.indexisto.front.adminpanel.client.common.ActivityExtended;
 import com.indexisto.front.adminpanel.client.common.InstrumentsFactoryImpl;
 import com.indexisto.front.adminpanel.client.common.ViewsFactoryImpl;
 import com.indexisto.front.adminpanel.client.events.LeftMenuSelectedEvent;
-import com.indexisto.front.adminpanel.client.events.NotificationEvent;
 import com.indexisto.front.adminpanel.client.rpcs.UserRPCService;
 import com.indexisto.front.adminpanel.client.rpcs.UserRPCServiceAsync;
 import com.indexisto.front.adminpanel.client.windows.Notification;
