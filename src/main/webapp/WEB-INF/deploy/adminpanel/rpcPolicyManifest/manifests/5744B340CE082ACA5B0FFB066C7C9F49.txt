@@ -1,0 +1,2 @@
+serviceClass: com.indexisto.front.adminpanel.client.rpcs.UserRPCService
+path: F050A5AF75CA39E6EA451D66F9EE419C.gwt.rpc
