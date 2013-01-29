@@ -1,2 +1,0 @@
-serviceClass: com.indexisto.front.adminpanel.client.rpcs.RPCService
-path: 7BCC88B3BB466FBA488065FBBF3867E8.gwt.rpc
