@@ -38,6 +38,7 @@ public class adminpanel implements EntryPoint {
 
 	public void onModuleLoad() {
 		Log.debug("This is a 'DEBUG' test message");
+		Log.debug("privetiki");
  
 		/*
 	sendButton.addClickHandler(new ClickHandler() {
