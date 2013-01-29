@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='com.indexisto.front.adminpanel.adminpanel' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/adminpanel/greet" class="com.indexisto.front.adminpanel.server.GreetingServiceImpl" />
+
+</module>
