@@ -5,6 +5,7 @@ package com.indexisto.front.adminpanel.client.pages.register;
 import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.user.client.Random;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.indexisto.front.adminpanel.client.blocks.MenuBlock;
@@ -28,20 +29,20 @@ public class RegisterActivity extends ActivityExtended  implements RegisterView.
 	private boolean isValidPass1;
 	private boolean isValidPass2;
 	private boolean isValidPassMutch;
-	*/
+	 */
 	private RegisterView registerView;
 	private RegisterPlace place;
-	
-	 public RegisterActivity(RegisterPlace place) {
-	        //this.clientFactory = clientFactory;
-		
-		 this.place = place;
-	    }
 
-	
+	public RegisterActivity(RegisterPlace place) {
+		//this.clientFactory = clientFactory;
+
+		this.place = place;
+	}
+
+
 	public void start(AcceptsOneWidget panel, EventBus eventBus) {
-		
-		
+
+		Log.debug("RegisterActivity started");
 		registerView = ViewsFactoryImpl.getRegisterView();
 		//registerView.setName(place.g);
 		registerView.setPresenter(this);
@@ -53,18 +54,34 @@ public class RegisterActivity extends ActivityExtended  implements RegisterView.
 
 	public void emailChanged(String email) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	public boolean nameBoxValidator(String name) {
-		boolean isValidName = FieldVerifier.isLenghtOK(name,1,100);
-		if (isValidName) {
-			
-			this.registerView.setNameValid();
+		boolean isValidName = false;
+		boolean isValidLenght = FieldVerifier.isLenghtOK(name,1,100);
+		boolean isValidCharecters = FieldVerifier.isValidCharacters(name);
+		if (isValidLenght) {
+
+			if (isValidCharecters) {
+
+				this.registerView.setNameValid();
+			} else { 
+				this.registerView.setNameInvalidCharacters();
+
+			}
+
+			//this.registerView.setNameValid();
+
+
 		} else { 
 			this.registerView.setNameInvalid();
-
 		}
+
+		if (isValidLenght && isValidCharecters) {
+			isValidName = true;
+		}
+
 		return isValidName;
 	}
 
@@ -72,7 +89,7 @@ public class RegisterActivity extends ActivityExtended  implements RegisterView.
 	public boolean emailBoxValidator(String emailText) {
 		boolean isValidEmail = FieldVerifier.isValidEmailAddress(emailText);
 		if (isValidEmail) {
-			
+
 			this.registerView.setEmailValid();
 		} else {
 			this.registerView.setEmailInvalid();
@@ -105,7 +122,7 @@ public class RegisterActivity extends ActivityExtended  implements RegisterView.
 			this.registerView.setPass2Invalid();
 			isValidPass2= false;
 		}
-		
+
 		return isValidPass2;
 
 	}
@@ -113,25 +130,31 @@ public class RegisterActivity extends ActivityExtended  implements RegisterView.
 
 	public void sendForm(String name, String email, String pass1, String pass2) {
 		// TODO Auto-generated method stub
-		InstrumentsFactoryImpl.getEventBus().fireEvent(new NotificationEvent("Privetiki Privetiki Privetiki ") );
+		//InstrumentsFactoryImpl.getEventBus().fireEvent(new NotificationEvent("Privetiki Privetiki Privetiki ") );
 
-		if ( nameBoxValidator(name) && emailBoxValidator(email) && pass1BoxValidator( pass1) && pass2BoxValidator( pass1, pass2)) {
+		boolean isValidName = nameBoxValidator(name);
+		boolean isValidEmail = emailBoxValidator(email);
+		boolean isValidPass1 = pass1BoxValidator(pass1);
+		boolean isValidPass2 =  pass2BoxValidator( pass1, pass2);
+		if (isValidName && isValidEmail && isValidPass1 && isValidPass2) {
+		//if ( nameBoxValidator(name) && emailBoxValidator(email) && pass1BoxValidator( pass1) && pass2BoxValidator( pass1, pass2)) {
 			//Log.debug("Form valid");
 			//sendToServer(eMailBox.getText(),pass1Box.getText(), pass2Box.getText());
-			System.out.println("Otsilaem");
-			//this.registerView.showWaitingWindow();
-			
+			//System.out.println("Otsilaem");
+			this.registerView.showWaitingWindow();
+			Log.debug("Make RPC: " + name + " " + email + " " + pass1 + " ");
 			makeRegisterRPC(name,email,pass1);
 		}
 		else {
 			System.out.println("Nee Otsilaem");
 		}
+		
 	}
 
 
-	
-	
-	
+
+
+
 	void makeRegisterRPC(String nick, String email, String pass1) {
 
 		UserRPCServiceAsync communicatorSvc = GWT.create(UserRPCService.class);
@@ -140,24 +163,27 @@ public class RegisterActivity extends ActivityExtended  implements RegisterView.
 		AsyncCallback <UserObj> callback = new AsyncCallback<UserObj>() {
 
 			public void onFailure(Throwable caught) {
-
+				registerView.hideWaitingWindow();
 				if (caught instanceof RPCServiceExeption) {
-					Log.debug("exeption!!");
+					Log.debug("exeption!");
 					RPCServiceExeption caughtRPCExeption = (RPCServiceExeption) caught;
+					String exeptionText = "Error code: " + caughtRPCExeption.getErrorReadableText() + " - " + caughtRPCExeption.getErrorCode();
+					InstrumentsFactoryImpl.getEventBus().fireEvent(new NotificationEvent(exeptionText) );
+					
 					if (caughtRPCExeption.getErrorCode() == RPCSErrorCodes.USER_REGISTER_EMAIL_EXIST) {
 						Log.debug("USER_REGISTER_EMAIL_EXIST");
 					}
 					else {
 						Log.debug("Unknown error");
 					}
-					
+
 					//Notifications notif = new Notifications(((RPCServiceExeption)caught).getErrorCode(), true, true);
 				}
 
 			}
 
 			public void onSuccess(UserObj result) {
-				
+				registerView.hideWaitingWindow();
 				Log.debug("onSuccess");
 				//status.setText("well done");
 				//UserHasLoggedEvent event = new UserHasLoggedEvent((User)result);
@@ -168,7 +194,7 @@ public class RegisterActivity extends ActivityExtended  implements RegisterView.
 				//RegisterPopup.this.hide();
 			}
 
-		
+
 		};
 
 		//	Make the call

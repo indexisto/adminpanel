@@ -39,7 +39,7 @@ public class NotificationContainer extends Composite implements NotificationEven
 	public void onNotificationSend(NotificationEvent event) {
 		// TODO Auto-generated method stub
 		Log.debug("Notification getted");
-		Notification notification =  new Notification("allo allo allo allo allo allo allo");
+		Notification notification =  new Notification(event.getNotifText());
 		panel.add(notification);
 		//panel.add(new Label("olllo"));
 	}

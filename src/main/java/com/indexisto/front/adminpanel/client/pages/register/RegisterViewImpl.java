@@ -271,6 +271,14 @@ public class RegisterViewImpl extends CompositePage implements RegisterView  {
 				nameLabel.addStyleName("regFormLabel");
 				
 			}
+			
+			
+			public void setNameInvalidCharacters() {
+				nameLabel.setText("Please provide only latin charcters and digits");
+				nameLabel.setStyleName("label_invalid");
+				nameLabel.addStyleName("regFormLabel");
+				
+			}
 
 
 			public void setNameValid() {
@@ -336,6 +344,16 @@ public class RegisterViewImpl extends CompositePage implements RegisterView  {
 				registerWaitingWindow = new CommonModalWindow("Registering. Please wait.", true);
 				registerWaitingWindow.show();
 			}
+
+
+			public void hideWaitingWindow() {
+				// TODO Auto-generated method stub
+				registerWaitingWindow.removeFromParent();
+				
+			}
+
+
+	
 
 
 		

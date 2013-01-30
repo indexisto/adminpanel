@@ -1,5 +1,6 @@
 package com.indexisto.front.adminpanel.client.pages.demolog;
 
+import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.indexisto.front.adminpanel.client.common.ActivityExtended;
@@ -20,7 +21,7 @@ public class DemologActivity extends ActivityExtended  implements DemologView.Pr
 	
 	public void start(AcceptsOneWidget panel, EventBus eventBus) {
 		
-		
+		Log.debug("DemologActivity started");
 		DemologView registerView = ViewsFactoryImpl.getDemologView();
 		//registerView.setName(place.g);
 		registerView.setPresenter(this);

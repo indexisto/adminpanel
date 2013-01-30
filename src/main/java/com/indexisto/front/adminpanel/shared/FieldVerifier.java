@@ -71,6 +71,20 @@ public class FieldVerifier {
 	}
 	
 	
+	public static boolean isValidCharacters(String text) {
+
+		RegExp rfc2822 = RegExp.compile(
+		        "^[a-zA-Z0-9\\s]*$"
+		);
+
+		if (!rfc2822.test(text)) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
 	
 	
 	

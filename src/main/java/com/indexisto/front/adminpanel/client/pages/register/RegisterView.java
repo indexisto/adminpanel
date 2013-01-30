@@ -13,6 +13,8 @@ public interface RegisterView extends IsWidget {
 	public void showWaitingWindow();
 	public void setNameInvalid();
 	public void setNameValid(); 
+	public void setNameInvalidCharacters();
+	public void hideWaitingWindow();  
 	
 	public void setPresenter(Presenter presenter);
 	
@@ -22,6 +24,8 @@ public interface RegisterView extends IsWidget {
 
 	        void sendForm(String name, String email,String pass1,String pass2);
 
+	        
+	        
 	        boolean emailBoxValidator(String email);
 	        boolean pass1BoxValidator(String pass1);
 			boolean pass2BoxValidator(String pass1, String pass2);
@@ -30,6 +34,10 @@ public interface RegisterView extends IsWidget {
 			boolean nameBoxValidator(String name);    
 	       
 	 }
+
+	
+
+	
  
 
 

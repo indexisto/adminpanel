@@ -1,5 +1,6 @@
 package com.indexisto.front.adminpanel.client.windows;
 
+import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
@@ -20,6 +21,7 @@ public class CommonModalWindow extends PopupPanel {
 		 if (isAnimated) {
 			 startProgressAnimation();
 		 }
+		 Log.debug("CommonModalWindow");
 	 }
 	
     public CommonModalWindow() {
