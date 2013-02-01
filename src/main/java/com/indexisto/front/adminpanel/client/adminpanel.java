@@ -76,10 +76,14 @@ public class adminpanel implements EntryPoint {
 	RootPanel.get().add(mainContainer);
 
 	 // Goes to the place represented on URL else default place
-    historyHandler.handleCurrentHistory();
-
+    //historyHandler.handleCurrentHistory();
+	
+	InstrumentsFactoryImpl.getUsercontroller().routeUser();
+	    
 	
    }
+   
+
 
 
 

@@ -61,7 +61,7 @@ h1 {
 	height: auto;
 	cursor: pointer;
 	float: left;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .ButtonPanel:hover {
@@ -162,7 +162,6 @@ h1 {
 .menuButtUtils .menuButtIcon {
 	background-position: -99px -32px;
 }
-
 
 .menuButtText {
 	position: absolute;
@@ -336,15 +335,13 @@ h1 {
 
 .closeSmallButtPosition {
 	position: absolute;
-	top: 2%;
-	left: 90%;
+	top: 2px;
+	right: 2px;
 }
-
 
 .notifCloseButtBack {
-	background:#dcd69d;
+	background: #dcd69d;
 }
-
 
 .closeSmallButtIcon {
 	width: 10px;
@@ -355,3 +352,42 @@ h1 {
 	left: 1px;
 	top: 1px;
 }
+
+.logOutButtIcon {
+	width: 23px;
+	height: 24px;
+	background-image: url('misc/indxesisto_map.png');
+	background-position: -40px -58px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.logOutButt {
+	width: 36px;
+	height: 40px;
+	float: left;
+}
+
+.topMenuUser {
+	float: right;
+	padding: 0px 10px 0px 0px;
+}
+
+.topMenuuUserName {
+	float: left;
+	margin: 14px 0px 0px 0px;
+}
+
+.hintLabel {
+	position: absolute;
+	padding: 4px;
+	background: #1F1F1E;
+	color: white;
+}
+
+.logOutButt .hintLabel {
+	background: #1F1F1E;
+	color: white;
+}
+

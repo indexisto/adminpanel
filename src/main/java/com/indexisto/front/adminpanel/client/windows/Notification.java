@@ -81,7 +81,7 @@ public class Notification extends Composite {
 		};
 
 		// Schedule the timer to close the popup in 3 seconds.
-		t1.schedule(399);
+		t1.schedule(119);
 
 
 

@@ -2,6 +2,8 @@ package com.indexisto.front.adminpanel.client.common;
 
 import com.indexisto.front.adminpanel.client.pages.demolog.DemologView;
 import com.indexisto.front.adminpanel.client.pages.demolog.DemologViewImpl;
+import com.indexisto.front.adminpanel.client.pages.home.HomeView;
+import com.indexisto.front.adminpanel.client.pages.home.HomeViewImpl;
 import com.indexisto.front.adminpanel.client.pages.login.LoginView;
 import com.indexisto.front.adminpanel.client.pages.login.LoginViewImpl;
 import com.indexisto.front.adminpanel.client.pages.register.RegisterView;
@@ -25,6 +27,12 @@ public class ViewsFactoryImpl {
 		// TODO Auto-generated method stub
 		return new DemologViewImpl();
 	}
+	
+	public static HomeView getHomeView() {
+		// TODO Auto-generated method stub
+		return new HomeViewImpl();
+	}
+	
 	
 
 }

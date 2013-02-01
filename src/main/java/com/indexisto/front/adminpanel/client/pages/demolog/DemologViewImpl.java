@@ -31,7 +31,7 @@ public class DemologViewImpl extends CompositePage implements DemologView  {
 
 	public DemologViewImpl() {
 		super();
-		this.pageTitle.setText("Please login");
+		this.pageTitle.setText("Demo login");
 
 		
 

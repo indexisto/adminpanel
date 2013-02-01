@@ -20,6 +20,7 @@ import com.indexisto.front.adminpanel.client.windows.CommonModalWindow;
 
 public class LeftMenuRegister extends Composite {
 
+	LeftMenuUtilsBlock leftMenuUtilsBlock = new LeftMenuUtilsBlock();
 	
 	private FlowPanel menuContainer = new FlowPanel();
 	
@@ -27,13 +28,13 @@ public class LeftMenuRegister extends Composite {
 	private  MenuBlock menuBlockReg = new MenuBlock(); 
 	private  MenuBlock menuBlockLog = new MenuBlock(); 
 	private  MenuBlock menuBlockDemo = new MenuBlock();
-	private  MenuBlock menuBlockUtils = new MenuBlock();
+	//private  MenuBlock menuBlockUtils = new MenuBlock();
 	//private Label showSomeStat;
 
 	private MenuButt menuButtReg = new MenuButt ("Register");
 	private MenuButt menuButtLog = new MenuButt ("Login");
 	private MenuButt menuButtDemo = new MenuButt ("Demo");
-	private MenuButt menuButtUtils = new MenuButt ("Dev utils");
+	//private MenuButt menuButtUtils = new MenuButt ("Dev utils");
 	
 	public LeftMenuRegister() {
 
@@ -48,7 +49,7 @@ public class LeftMenuRegister extends Composite {
 		menuButtReg.addStyleName("menuButtReg");
 		menuButtLog.addStyleName("menuButtLog");
 		menuButtDemo.addStyleName("menuButtDemo");
-		menuButtUtils.addStyleName("menuButtUtils");
+		//menuButtUtils.addStyleName("menuButtUtils");
 		
 		
 		
@@ -98,6 +99,7 @@ public class LeftMenuRegister extends Composite {
 		menuBlockDemo.addSubMenuItem(new MenuSubButt("sub menu item 3"));
 		
 		
+		/*
 		menuBlockUtils.addMenuItem(menuButtUtils);
 		MenuSubButt subNotif = new MenuSubButt("Test notification");
 		MenuSubButt subModal = new MenuSubButt("Test modal");
@@ -124,7 +126,7 @@ public class LeftMenuRegister extends Composite {
 			 
 		});
 		
-		
+		*/
 		
 		/*
 		showSomeStat = new Label("LeftMenu");
@@ -139,7 +141,9 @@ public class LeftMenuRegister extends Composite {
 		menuContainer.add(menuBlockReg);
 		menuContainer.add(menuBlockLog);
 		menuContainer.add(menuBlockDemo);
-		menuContainer.add(menuBlockUtils);
+		menuContainer.add(leftMenuUtilsBlock);
+		
+		//menuContainer.add(menuBlockUtils);
 		initWidget(menuContainer);
 	}
 
