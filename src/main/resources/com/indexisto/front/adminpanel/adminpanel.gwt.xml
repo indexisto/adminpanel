@@ -8,6 +8,14 @@
 	<inherits name='com.google.gwt.junit.JUnit' />
 	<inherits name="com.google.gwt.inject.Inject" />
 	<inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" />
+	
+	<inherits name="org.hibernate.validator.HibernateValidator" />
+	
+	<replace-with
+		class="com.indexisto.front.adminpanel.client.common.SampleValidatorFactory">
+		<when-type-is class="javax.validation.ValidatorFactory" />
+	</replace-with>
+
 
 	<!-- Inherit the default GWT style sheet. You can change -->
 	<!-- the theme of your GWT application by uncommenting -->

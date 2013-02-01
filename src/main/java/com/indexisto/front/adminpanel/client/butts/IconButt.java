@@ -1,9 +1,15 @@
 package com.indexisto.front.adminpanel.client.butts;
 
+import com.allen_sauer.gwt.log.client.Log;
+import com.google.gwt.event.dom.client.MouseOutEvent;
+import com.google.gwt.event.dom.client.MouseOutHandler;
+import com.google.gwt.event.dom.client.MouseOverEvent;
+import com.google.gwt.event.dom.client.MouseOverHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Label;
 
 public class IconButt extends Composite {
 
@@ -12,7 +18,7 @@ public class IconButt extends Composite {
     public FlowPanel text = new FlowPanel();
     public FlowPanel content = new FlowPanel();
     public FlowPanel clearfloat = new FlowPanel();
-
+    public Label hintLabel;
     public void addStyles() {
     	panel.addStyleName("ButtonPanel");
     	
@@ -47,6 +53,8 @@ public class IconButt extends Composite {
     	content.add(clearfloat);
     	
 
+    	
+    
     	
     			
 
@@ -106,4 +114,67 @@ public class IconButt extends Composite {
 	public void setUnselectedBack (String style) {
 		this.removePanelStyle(style);
 	}
+	
+	
+	public void setHintText (final String text) {
+		
+		
+		this.getFocusPanel().addMouseOverHandler(new MouseOverHandler() {
+
+			public void onMouseOver(MouseOverEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("over");
+				 hintLabel = new Label(text);
+				 hintLabel.addStyleName("hintLabel");
+				 IconButt.this.content.add(hintLabel);
+				 
+				 int widthHint = hintLabel.getOffsetWidth();
+				 int heightHint = hintLabel.getOffsetHeight();
+				 Log.debug("width2 " + String.valueOf(widthHint));
+				 Log.debug("height2 " + String.valueOf(heightHint));
+	
+				 
+				 
+				 int width = IconButt.this.panel.getOffsetWidth();
+				 int height = IconButt.this.panel.getOffsetHeight();
+				 
+				 
+				 Log.debug(String.valueOf(width));
+				 Log.debug(String.valueOf(height));
+				 
+				 int hintLeft = 0;
+				 if ((widthHint - width) > 0) {
+					 hintLeft = (widthHint - width)/2 * -1;
+				 } else {
+					 hintLeft = (width - widthHint)/2;
+				 }
+				 
+				 Log.debug("hintLeft " + hintLeft);
+				 
+				 hintLabel.getElement().getStyle().setProperty("top", (height + 2) + "px" );
+				 hintLabel.getElement().getStyle().setProperty("left", (hintLeft) + "px" );
+				 
+			}
+			
+		});
+		
+		
+		this.getFocusPanel().addMouseOutHandler(new MouseOutHandler() {
+
+
+			public void onMouseOut(MouseOutEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("out");
+				if (hintLabel!=null) {
+					hintLabel.removeFromParent();
+					hintLabel = null;
+					
+				}
+			}
+			
+		});
+		
+		
+	}
+	
 }

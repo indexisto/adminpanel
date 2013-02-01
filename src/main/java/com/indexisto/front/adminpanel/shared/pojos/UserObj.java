@@ -3,19 +3,36 @@ package com.indexisto.front.adminpanel.shared.pojos;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class UserObj implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private String uid = "504466d822d20bf487f5a592";
-	private String nick= "Anonymous";
-	private String email= "anonymous@anonymous.com";
-	private boolean isFBUser= false;
-	private int userRole= 0;
-	private String FBaccess_token= null;
-	private int FBexpires= 0;
-	private boolean VIP = false;
+	
+	private String uid = "";
+	
+	@NotNull (message="Name field must be filled")
+	@Size(min = 2, message="Name must be 2 characters at least")
+	@Pattern(regexp= "^[a-zA-Z0-9\\s]*$", message="Only latin characters and digits please")
+	private String name= "";
+	
+	@NotNull (message="Email field must be filled")
+	@Pattern(regexp= "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$",  message="Provide valid email please")
+	private String email= "";
+	
+
+	
+	
+	private UserRoles userRole= UserObj.UserRoles.UNREGISTERED;
+	private boolean isDemoRegistered = false;	
 
 
+	public static enum UserRoles {
+		REGISTERED, UNREGISTERED, ADMIN
+	}
+	
 
 	public UserObj() {
 
@@ -35,17 +52,6 @@ public class UserObj implements Serializable {
 
 
 
-	public String getNick() {
-		return nick;
-	}
-
-
-
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
-
-
 
 	public String getEmail() {
 		return email;
@@ -59,79 +65,42 @@ public class UserObj implements Serializable {
 
 
 
-	public boolean isFBUser() {
-		return isFBUser;
-	}
-
-
-
-	public void setFBUser(boolean isFBUser) {
-		this.isFBUser = isFBUser;
-	}
-
-
-
-	public int getUserRole() {
+	public UserRoles getUserRole() {
 		return userRole;
 	}
 
 
 
-	public void setUserRole(int userRole) {
+	public void setUserRole(UserRoles userRole) {
 		this.userRole = userRole;
 	}
 
 
 
-	public String getFBaccess_token() {
-		return FBaccess_token;
+	public String getName() {
+		return name;
 	}
 
 
 
-	public void setFBaccess_token(String fBaccess_token) {
-		FBaccess_token = fBaccess_token;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
 
-	public int getFBexpires() {
-		return FBexpires;
+	public boolean isDemoRegistered() {
+		return isDemoRegistered;
 	}
 
 
 
-	public void setFBexpires(int fBexpires) {
-		FBexpires = fBexpires;
-	}
-	
-	public boolean isAnonymous() {
-		if (this.nick.equals("Anonymous")) {
-			return true;
-		}
-		else {
-			return false;
-		}
+	public void setDemoRegistered(boolean isDemoRegistered) {
+		this.isDemoRegistered = isDemoRegistered;
 	}
 
 
 
-	public boolean isVIP() {
-		return VIP;
-	}
 
 
-
-	public void setVIP(boolean vIP) {
-		VIP = vIP;
-	}
-	
-	/*
-	public void setUserRoleFromCookie(CookieObj cookieObj) {
-		//this.email = "";
-		//private String md5session = "";
-		//private boolean isFBUser = false;
-		this.userRole = cookieObj.getUserRole();
-		//private String nick = "Anonymous";
-	}*/
 }
