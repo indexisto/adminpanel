@@ -25,7 +25,7 @@ import com.indexisto.front.adminpanel.client.windows.NotificationContainer;
 
 
 public class adminpanel implements EntryPoint {
-
+	//Merfy
 	private Place defaultPlace = new RegisterPlace("World!");
 	private final FlowPanel mainContainer = new FlowPanel();
 	private final SimplePanel MVPPanel = new SimplePanel();
