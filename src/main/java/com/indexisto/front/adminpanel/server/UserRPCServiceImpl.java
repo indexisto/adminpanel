@@ -32,6 +32,8 @@ public class UserRPCServiceImpl extends RemoteServiceServlet implements UserRPCS
 
 	public UserObj doRegister(UserObjRegisterForm userObjRegisterForm) throws RPCServiceExeption {
 		UserExec userExec = new UserExecImpl();
+		
+		// RemoteServiceUtil.
 		UserObj userObj = userExec.createUserAndSetCookie(userObjRegisterForm, this.getThreadLocalResponse());
 		return userObj;
 	}

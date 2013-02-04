@@ -59,6 +59,9 @@ public class CookieExecImpl implements CookieExec {
 
 	public void setCookies(HttpServletResponse response, UserObj userObj) throws RPCServiceExeption {
 
+		if (response==null) {
+			System.out.println("noo response");
+		}
 		//TODO - VALIDATE INPUT!!!
 		
 		//String md5session = CommonsServer.MD5(MongoPool.getSecretKey() + cookieObj.getEmail());

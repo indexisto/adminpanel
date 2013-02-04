@@ -11,7 +11,8 @@ import com.indexisto.front.adminpanel.shared.pojos.UserObj;
 import com.indexisto.front.adminpanel.shared.pojos.UserObjRegisterForm;
  
 
-@RemoteServiceRelativePath("UserRPCService")
+//@RemoteServiceRelativePath("UserRPCService")
+@RemoteServiceRelativePath("dispatcher")
 public interface UserRPCService extends RemoteService {
   
 	public UserObj doLogin(UserObjRegisterForm userObjRegisterForm) throws RPCServiceExeption;
